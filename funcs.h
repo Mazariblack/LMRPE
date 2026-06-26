@@ -11,4 +11,5 @@ int luaSetWinPosWrapper(lua_State* L);
 int luaSwapBuffersWrapper(lua_State* L);
 int luaPollEventsWrapper(lua_State* L);
 int luaDrawTerminateWrapper(lua_State* L);
+int luaGetKeyWrapper(lua_State* L);
 #endif

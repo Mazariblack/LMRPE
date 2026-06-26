@@ -24,6 +24,9 @@
     <ClCompile Include="luamodule.cpp">
       <Filter>Файлы ресурсов</Filter>
     </ClCompile>
+    <ClCompile Include="draw.cpp">
+      <Filter>Файлы ресурсов</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="funcs.h">

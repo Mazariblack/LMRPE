@@ -1,4 +1,3 @@
-#include "includes.h"
 #include "funcs.h"
 
 unsigned int SC_WIDTH = 800;
@@ -34,6 +33,13 @@ int main() {
 
     lua_pushcfunction(L, luaDrawTerminateWrapper);
     lua_setglobal(L, "closeWindow");
+
+    lua_pushcfunction(L, luaGetKeyWrapper);
+    lua_setglobal(L, "getKey");
+
+
+    lua_pushinteger(L, GLFW_PRESS);
+    lua_setglobal(L, "KEY_PRESS");
 
     if (luaL_dofile(L, "script.lua") != LUA_OK) {
         std::cout << "[CERR] Lua Error: " << lua_tostring(L, -1) << std::endl;

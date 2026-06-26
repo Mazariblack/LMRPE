@@ -152,6 +152,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="C:\Users\Vlad\Downloads\gl.c" />
+    <ClCompile Include="draw.cpp" />
     <ClCompile Include="luamodule.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>

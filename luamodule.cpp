@@ -77,5 +77,13 @@ int luaPollEventsWrapper(lua_State* L) {
 
 int luaDrawTerminateWrapper(lua_State* L) {
     glfwTerminate();
-    return 0;
+    std::exit(0);
+}
+
+int luaGetKeyWrapper(lua_State* L) {
+    int key = (int)luaL_checkinteger(L, 2);
+    GLFWwindow* window = (GLFWwindow*)lua_touserdata(L, 1);
+
+    lua_pushboolean(L, glfwGetKey(window, key));
+    return 1;
 }

@@ -328,7 +328,7 @@ extern "C" {
  *
  *  @ingroup input
  */
-#define GLFW_RELEASE                0
+#define GLFW_RELEASE                2
 /*! @brief The key or mouse button was pressed.
  *
  *  The key or mouse button was pressed.
@@ -342,7 +342,7 @@ extern "C" {
  *
  *  @ingroup input
  */
-#define GLFW_REPEAT                 2
+#define GLFW_REPEAT                 3
 /*! @} */
 
 /*! @defgroup hat_state Joystick hat states
