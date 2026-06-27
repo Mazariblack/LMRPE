@@ -1,7 +1,7 @@
-#include "includes.h"
-
 #ifndef FUNCS_H
 #define FUNCS_H
+
+#include "includes.h"
 
 int luaCreateWinWrapper(lua_State* L);
 int luaSetWinBackColorWrapper(lua_State* L);

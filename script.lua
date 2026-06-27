@@ -6,7 +6,7 @@ setVertSync(0)
 while not windowShouldClose(window) do
 	setBackColor(42.0, 42.0, 53.0, 1.0)
 
-	if getKey(window, 256) then --If escape pressed then close window
+	if getKey(window, 256) then
 		closeWindow()
 	end
 

@@ -10,33 +10,22 @@ int main() {
     L = luaL_newstate();
     luaL_openlibs(L);
 
-    lua_pushcfunction(L, luaCreateWinWrapper);
-    lua_setglobal(L, "createWindow");
+    std::map<std::string, 
+        lua_CFunction> luaCfuncs = { 
+            {"createWindow", luaCreateWinWrapper},
+            {"setBackColor", luaSetWinBackColorWrapper},
+            {"windowShouldClose", luaWinShouldCloseWrapper},
+            {"setVertSync", luaVertSyncWrapper},
+            {"setWinPos", luaSetWinPosWrapper},
+            {"swapBuffers", luaSwapBuffersWrapper},
+            {"pollEvents", luaPollEventsWrapper},
+            {"closeWindow", luaDrawTerminateWrapper},
+            {"getKey", luaGetKeyWrapper}};
 
-    lua_pushcfunction(L, luaSetWinBackColorWrapper);
-    lua_setglobal(L, "setBackColor");
-
-    lua_pushcfunction(L, luaWinShouldCloseWrapper);
-    lua_setglobal(L, "windowShouldClose");
-
-    lua_pushcfunction(L, luaVertSyncWrapper);
-    lua_setglobal(L, "setVertSync");
-
-    lua_pushcfunction(L, luaSetWinPosWrapper);
-    lua_setglobal(L, "setWinPos");
-
-    lua_pushcfunction(L, luaSwapBuffersWrapper);
-    lua_setglobal(L, "swapBuffers");
-
-    lua_pushcfunction(L, luaPollEventsWrapper);
-    lua_setglobal(L, "pollEvents");
-
-    lua_pushcfunction(L, luaDrawTerminateWrapper);
-    lua_setglobal(L, "closeWindow");
-
-    lua_pushcfunction(L, luaGetKeyWrapper);
-    lua_setglobal(L, "getKey");
-
+    for (const auto& [name, func] : luaCfuncs) {
+        lua_pushcfunction(L, func);
+        lua_setglobal(L, name.c_str());
+    } 
 
     lua_pushinteger(L, GLFW_PRESS);
     lua_setglobal(L, "KEY_PRESS");
@@ -44,27 +33,6 @@ int main() {
     if (luaL_dofile(L, "script.lua") != LUA_OK) {
         std::cout << "[CERR] Lua Error: " << lua_tostring(L, -1) << std::endl;
     }
-
-    //lua_getglobal(L, "window");
-    //GLFWwindow* window = (GLFWwindow*)lua_touserdata(L, -1);
-
-    //if (!window) {
-    //    std::cout << "[CINF] Window creation cancelled" << std::endl;
-    //}
-    //else {
-    //    glViewport(0, 0, SC_WIDTH, SC_HEIGHT);
-
-    //    while (!glfwWindowShouldClose(window)) {
-    //        glClear(GL_COLOR_BUFFER_BIT);
-
-    //        glfwSwapBuffers(window);
-    //        glfwPollEvents();
-    //    }
-
-    //    lua_close(L);
-    //    glfwTerminate();
-    //    return 0;
-    //}
     lua_close(L);
     return 0;
 }
