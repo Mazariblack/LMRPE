@@ -1,0 +1,22 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "x64\\Debug\\luacompile.h.obj",
+            "outputs": [
+                "D:\\repos\\lmrpe\\lmrpe\\x64\\Debug\\vc145.pdb",
+                "x64\\Debug\\",
+                "D:\\repos\\lmrpe\\lmrpe\\x64\\Debug\\luacompile.h.ifc"
+            ],
+            "provides": [
+                {
+                    "logical-name": "luacompile.h",
+                    "source-path": "d:\\repos\\lmrpe\\lmrpe\\luacompile.h",
+                    "lookup-method": "absolute"
+                }
+            ],
+            "requires": []
+        }
+    ]
+}

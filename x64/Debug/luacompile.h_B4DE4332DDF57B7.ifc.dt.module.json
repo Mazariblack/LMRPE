@@ -1,0 +1,22 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "x64\\Debug\\luacompile.obj",
+            "outputs": [
+                "x64\\Debug\\luacompile.h_B4DE4332DDF57B7.ifc.dt.module.json",
+                "x64\\Debug\\luacompile.h_B4DE4332DDF57B7.ifc.dt.d.json",
+                "x64\\Debug\\luacompile.h.ifc"
+            ],
+            "provides": [
+                {
+                    "logical-name": "D:\\repos\\lmrpe\\lmrpe\\luacompile.h",
+                    "source-path": "d:\\repos\\lmrpe\\lmrpe\\luacompile.h",
+                    "lookup-method": "absolute"
+                }
+            ],
+            "requires": []
+        }
+    ]
+}

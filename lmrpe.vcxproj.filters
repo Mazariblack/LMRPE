@@ -24,15 +24,15 @@
     <ClCompile Include="luamodule.cpp">
       <Filter>Файлы ресурсов</Filter>
     </ClCompile>
+    <ClCompile Include="luacompile.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="funcs.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="includes.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\ыфвфывв\tiny_obj_loader.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

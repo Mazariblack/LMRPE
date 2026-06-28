@@ -152,11 +152,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="C:\Users\Vlad\Downloads\gl.c" />
+    <ClCompile Include="luacompile.h" />
     <ClCompile Include="luamodule.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\ыфвфывв\tiny_obj_loader.h" />
     <ClInclude Include="funcs.h" />
     <ClInclude Include="includes.h" />
   </ItemGroup>
