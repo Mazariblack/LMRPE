@@ -1,3 +1,12 @@
 ﻿D:\visusds\MSBuild\Microsoft\VC\v180\Microsoft.CppBuild.targets(551,5): warning MSB8028: промежуточный каталог (x64\Debug\) содержит файлы, которые используются совместно с другим проектом (jsmrpe.vcxproj).  Это может привести к ошибкам очистки и перестроения.
   Проверка источников на наличие зависимостей модуля…
+  luacompile.h
+  Компиляция…
+  luacompile.h
+  luamodule.cpp
+D:\repos\lmrpe\lmrpe\luamodule.cpp(99,24): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+  main.cpp
+  Создание кода...
   lmrpe.vcxproj -> D:\repos\lmrpe\x64\Debug\lmrpe.exe
+  "pwsh.exe" не является внутренней или внешней
+  командой, исполняемой программой или пакетным файлом.

@@ -1,6 +1,8 @@
 #include "lua/lua.hpp"
 #include "funcs.h"
 
+std::vector<int*> allocMOrder = {};
+
 int LuaWrapper::luaCreateWinWrapper(lua_State* L) {
     unsigned int width = (unsigned int)luaL_checkinteger(L, 1);
     unsigned int height = (unsigned int)luaL_checkinteger(L, 2);
@@ -86,4 +88,40 @@ int LuaWrapper::luaGetKeyWrapper(lua_State* L) {
 
     lua_pushboolean(L, glfwGetKey(window, key));
     return 1;
+}
+int LuaWrapper::luaMAllocWrapper(lua_State* L) {
+    int mCount = (int)luaL_checkinteger(L, 1);
+
+    std::cout << "[CINF] Allocating memory" << std::endl;
+    int* alloc = (int*)malloc(mCount * sizeof(int));
+    allocMOrder.push_back(alloc);
+
+    int lastAllocIndex = allocMOrder.size() - 1;
+
+    lua_pushinteger(L, lastAllocIndex);
+    return 1;
+}
+int LuaWrapper::luaMDeallocWrapper(lua_State* L) {
+    int allocMId = (int)luaL_checkinteger(L, 1);
+
+    std::cout << "[CINF] Deallocating memory" << std::endl;
+    if (allocMId >= 0 && allocMId < allocMOrder.size()) {
+        if (allocMOrder[allocMId] != nullptr) {
+            free(allocMOrder[allocMId]);
+            allocMOrder[allocMId] = nullptr;
+        }
+    }
+
+    return 0;
+}
+int LuaWrapper::luaMForceDeallocWrapper(lua_State* L) {
+    std::cout << "[CINF] Force deallocating memory" << std::endl;
+    for (size_t i = 0; i < allocMOrder.size(); ++i) {
+        if (allocMOrder[i] != nullptr) {
+            free(allocMOrder[i]);
+            allocMOrder[i] = nullptr;
+        }
+    }
+
+    return 0;
 }

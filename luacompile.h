@@ -50,7 +50,10 @@ private:
             {"swapBuffers", LuaWrapper::luaSwapBuffersWrapper},
             {"pollEvents", LuaWrapper::luaPollEventsWrapper},
             {"closeWindow", LuaWrapper::luaDrawTerminateWrapper},
-            {"getKey", LuaWrapper::luaGetKeyWrapper}
+            {"getKey", LuaWrapper::luaGetKeyWrapper},
+            {"mAlloc", LuaWrapper::luaMAllocWrapper},
+            {"mDealloc", LuaWrapper::luaMDeallocWrapper},
+            {"mForceDealloc", LuaWrapper::luaMForceDeallocWrapper}
         };
 
         for (const auto& [name, func] : luaCfuncs) {

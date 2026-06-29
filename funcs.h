@@ -14,5 +14,8 @@ public:
 	static int luaPollEventsWrapper(lua_State* L);
 	static int luaDrawTerminateWrapper(lua_State* L);
 	static int luaGetKeyWrapper(lua_State* L);
+	static int luaMAllocWrapper(lua_State* L);
+	static int luaMDeallocWrapper(lua_State* L);
+	static int luaMForceDeallocWrapper(lua_State* L);
 };
 #endif
